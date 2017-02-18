@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+(cd pascal && mvn install)
 JAVACMD=${JAVACMD:=./graalvm/bin/java}
 
 PROGRAM_ARGS=""
