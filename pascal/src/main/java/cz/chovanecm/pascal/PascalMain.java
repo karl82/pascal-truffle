@@ -89,8 +89,23 @@ public class PascalMain {
         Source source = builder.build();
         PolyglotEngine engine = PolyglotEngine.newBuilder().setIn(System.in).setOut(System.out).build();
         System.err.println("Executing");
-        PolyglotEngine.Value result = engine.eval(source);
+        execute(source, engine);
+        execute(source, engine);
+        execute(source, engine);
+        execute(source, engine);
+        execute(source, engine);
+        execute(source, engine);
+        execute(source, engine);
+        execute(source, engine);
+        execute(source, engine);
+        execute(source, engine);
         engine.dispose();
+    }
+
+    private void execute(Source source, PolyglotEngine engine) {
+        long t1 = System.nanoTime();
+        PolyglotEngine.Value result = engine.eval(source);
+        System.err.println("t = " + (System.nanoTime() - t1));
     }
 
     private void parseArgs(String[] args) {
