@@ -10,6 +10,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <truffle.version>0.23</truffle.version>
     </properties>
     
     <build>
@@ -55,18 +56,18 @@
         <dependency>
             <groupId>com.oracle.truffle</groupId>
             <artifactId>truffle-api</artifactId>
-            <version>0.21</version> <!-- or any later version -->
+            <version>${truffle.version}</version> <!-- or any later version -->
         </dependency>
         <dependency>
             <groupId>com.oracle.truffle</groupId>
             <artifactId>truffle-dsl-processor</artifactId>
-            <version>0.21</version>
+            <version>${truffle.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.oracle.truffle</groupId>
             <artifactId>truffle-tck</artifactId>
-            <version>0.21</version>
+            <version>${truffle.version}</version>
             <scope>provided</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/junit/junit -->
