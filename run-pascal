@@ -17,6 +17,8 @@ do
       JAVA_ARGS="$JAVA_ARGS -Dgraal.Dump= -Dgraal.MethodFilter=Truffle.* -Dgraal.TruffleBackgroundCompilation=false -Dgraal.TraceTruffleCompilation=true -Dgraal.TraceTruffleCompilationDetails=true" ;;
     -disassemble)
       JAVA_ARGS="$JAVA_ARGS -XX:CompileCommand=print,*OptimizedCallTarget.callRoot -XX:CompileCommand=exclude,*OptimizedCallTarget.callRoot -Dgraal.TruffleBackgroundCompilation=false -Dgraal.TraceTruffleCompilation=true -Dgraal.TraceTruffleCompilationDetails=true" ;;
+    -jitwatch)
+      JAVA_ARGS="$JAVA_ARGS -XX:LogFile=jit.log -XX:+UnlockDiagnosticVMOptions -XX:+TraceClassLoading -XX:+LogCompilation" ;;
     -J*)
       opt=${opt:2}
       JAVA_ARGS="$JAVA_ARGS $opt" ;;
